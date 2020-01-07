@@ -1,0 +1,9 @@
+.seat{
+    padding: 20px;
+}
+.open{
+    background-color: blue;
+}
+.occupied{
+    background-color:red ;
+}
