@@ -4,13 +4,15 @@ import 'firebase/firestore';
 import DB from "./firestore.js";
 
 import CapacityCounter from "./components/capacityCounter";
+import CapacityButton from './components/capacityButton';
 
 export default function App() {
 
   return (
-    <div className='capacityCounter'>
+    <div>
+      <CapacityButton multiplier={-1} sign={'-'}/>
+      <CapacityButton multiplier={1} sign={'+'}/>
       <CapacityCounter />
-
     </div>
   );
 }
