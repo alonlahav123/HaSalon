@@ -1,9 +1,13 @@
+.container{
+    padding: 30 px;
+    color: seagreen;
+}
 .seat{
     padding: 20px;
 }
 .open{
-    background-color: blue;
+    color: blue;
 }
 .occupied{
-    background-color:red ;
+    color:red ;
 }
