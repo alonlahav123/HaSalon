@@ -46,6 +46,7 @@ function ChairOccupancy(props) {
             console.log(Chairs[SelectRandomSeat()].occupiedSeat);
             Chairs[SelectRandomSeat()].occupiedSeat? (index--):(setOccupiedSeat(true));
         }
+        console.log(Chairs);
     });
 
     return(
