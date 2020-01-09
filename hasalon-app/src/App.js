@@ -5,8 +5,9 @@ import DB from "./firestore.js";
 
 import CapacityCounter from "./components/capacityCounter";
 import CapacityButton from './components/capacityButton';
-import ChairOccupancy from './components/chairCapacityBox';
+// import ChairOccupancy from './components/chairCapacityBox';
 import chairs from './components/chairCapacityBox'
+import Tester from './components/chairCapacityBox';
 
 export default function App() {
   // const [seatingchart,setSeatingChart]= useState(chairs)
@@ -16,23 +17,7 @@ export default function App() {
       <CapacityButton multiplier={-1} sign={'-'}/>
       <CapacityButton multiplier={1} sign={'+'}/>
       <CapacityCounter />
-      <ChairOccupancy 
-      // startingOccupancy=
-        // {
-          // Promise.resolve().
-          // DB.collection('simpleData').doc('persons').get().then((doc)=>{
-            // return doc.data().amountOfPeople 
-          // })
-        // }
-      />
-      
-      <div className='seatingChart'>
-        {/* {
-           seatingchart.map((chair, taken,index)=>{
-            return(<ChairOccupancy key={index} occupied={taken} chair={chair} /> )
-          })    
-        } */}
-      </div>
+      <Tester/>
     </div>
   );
 }
