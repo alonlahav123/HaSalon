@@ -1,3 +1,7 @@
-div {
-    display: inline;
+h2 {
+    text-align: center;
+}
+
+.calendar {
+    grid-column: 2 / span 1;
 }

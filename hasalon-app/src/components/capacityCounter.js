@@ -11,8 +11,8 @@ function CapacityCounter(props) {
         setPeopleInThePlaceNow(doc.data().amountOfPeople);
     });
 
-    return(
-        <div>{peopleInThePlaceNow}</div>
+    return (
+        <font size='10' className='amountPpl'>{peopleInThePlaceNow}</font>
     );
 };
 

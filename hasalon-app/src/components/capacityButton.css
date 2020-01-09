@@ -1,4 +1,10 @@
 .btn {
     outline: none;
-    margin: 20px;
+    height: 10vw;
+    width: 10vw;
+    font-size: 100px;
+}
+
+.text {
+    font-size: 5vw;
 }
