@@ -17,7 +17,7 @@ export default function App() {
       <CapacityButton multiplier={-1} sign={'-'}/>
       <CapacityButton multiplier={1} sign={'+'}/>
       <CapacityCounter />
-      <Tester/>
+      <Tester />
     </div>
   );
 }
