@@ -5,28 +5,36 @@ import {Container, Col, Row} from 'react-bootstrap';
 
 import CapacityCounter from "../components/capacityCounter";
 import CapacityButton from '../components/capacityButton';
-import FrontDeskCalendar from '../components/frontDeskCalendar'
+import FrontDeskCalendar from '../components/frontDeskCalendar';
+import MeetingSwitch from '../components/meetingSwitch';
 
 function frontDesk() {
     return (
-        <Container>
+        <Container fluid='true'>
             <Row>
                 <Col>
                     <h2>Front Desk</h2>
                 </Col>
             </Row>
+
             <Row>
-                <Col xs={2}>
+                <Col sm={2} className='text-center'>
                     <CapacityButton multiplier={-1} sign={'-'} />
                 </Col>
-                <Col xs={2}>
+                <Col sm={2} className="text-center">
                     <CapacityCounter />
                 </Col>
-                <Col xs={2}>
+                <Col sm={2} className='text-center'>
                     <CapacityButton multiplier={1} sign={'+'} />
                 </Col>
-                <Col xs={6}>
+                <Col sm={'auto'}>
                     <FrontDeskCalendar className='calendar' />
+                </Col>
+            </Row>
+
+            <Row>
+                <Col sm={3}>
+                    <MeetingSwitch />
                 </Col>
             </Row>
         </Container>

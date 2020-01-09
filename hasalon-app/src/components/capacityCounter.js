@@ -12,7 +12,7 @@ function CapacityCounter(props) {
     });
 
     return (
-        <div className='amountPpl'>{peopleInThePlaceNow}</div>
+        <font size='10' className='amountPpl'>{peopleInThePlaceNow}</font>
     );
 };
 

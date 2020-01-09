@@ -1,3 +1,10 @@
 .btn {
     outline: none;
+    height: 10vw;
+    width: 10vw;
+    font-size: 100px;
+}
+
+.text {
+    font-size: 5vw;
 }
