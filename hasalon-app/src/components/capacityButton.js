@@ -6,7 +6,7 @@ import firebase from 'firebase/app';
 
 function capacityButton(props) {
     return (
-        <Button className='btn' onClick={() => {updateCapacity(props.multiplier)}} variant='primary' size='lg'>
+        <Button className='capButton' onClick={() => {updateCapacity(props.multiplier)}} variant='primary' size='lg'>
             <div className='text'>{props.sign}</div>
         </Button>
     )
