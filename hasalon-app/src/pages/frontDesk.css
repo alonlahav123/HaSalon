@@ -1,21 +1,5 @@
 h2 {
-    width: 97vw;
     text-align: center;
-}
-
-.container {
-    width: 97vw;
-    height: 97vh;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-}
-
-.capacityContainer {
-    grid-column: 1 / span 1;
-
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(1, 20vh);
 }
 
 .calendar {
