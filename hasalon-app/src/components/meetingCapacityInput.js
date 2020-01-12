@@ -59,7 +59,8 @@ function test() {
         DB.collection('simpleData').doc('persons').get().then(function (doc) {
             const amntPpl = doc.data().amountOfPeople;
             const metaCap = doc.data().capacity;
-            const rawNewMetaCap = metaCap - cleanCapacity;
+            const meetingRoomTotal = doc.data().meetingRoomTotal;
+            const rawNewMetaCap = metaCap - meetingRoomTotal;
             const rawNewAmntPpl = amntPpl - cleanCapacity;
             const newAmntPpl = Number(rawNewAmntPpl);
             const newMetaCap = Number(rawNewMetaCap)
@@ -76,7 +77,8 @@ function test() {
             const amntPpl = doc.data().amountOfPeople;
             const oldMtgCap = doc.data().meetingCapacity;
             const metaCap = doc.data().capacity;
-            const rawNewMetaCap = metaCap + cleanCapacity;
+            const meetingRoomTotal = doc.data().meetingRoomTotal;
+            const rawNewMetaCap = metaCap + meetingRoomTotal;
             const rawNewAmntPpl = amntPpl + oldMtgCap;
             const newMetaCap = Number(rawNewMetaCap)
             const newAmntPpl = Number(rawNewAmntPpl)
