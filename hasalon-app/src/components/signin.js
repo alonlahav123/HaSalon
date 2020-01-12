@@ -37,11 +37,14 @@ function SignInForm(props) {
                 minLength="6"
               /> 
             </Form.Group>
+            
               <a href="/forgot">
               <Form.Text>
                 Don't remember your password? Click here to reset.
               </Form.Text>
               </a>
+              
+              <br />
 
             <Button variant="primary" type="submit">
               Submit
