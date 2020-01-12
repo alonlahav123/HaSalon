@@ -8,6 +8,7 @@ import CapacityButton from '../components/capacityButton';
 import FrontDeskCalendar from '../components/frontDeskCalendar';
 import MeetingSwitch from '../components/meetingSwitch';
 import MeetingCapacityInput from '../components/meetingCapacityInput';
+import ResetButton from '../components/ResetButton';
 
 function frontDesk() {
     return (
@@ -37,6 +38,11 @@ function frontDesk() {
                 <Col sm={3}>
                     {/*<MeetingSwitch />*/}
                     <MeetingCapacityInput />
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                <ResetButton />
                 </Col>
             </Row>
         </Container>
