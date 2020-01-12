@@ -7,6 +7,7 @@ import CapacityCounter from "../components/capacityCounter";
 import CapacityButton from '../components/capacityButton';
 import FrontDeskCalendar from '../components/frontDeskCalendar';
 import MeetingSwitch from '../components/meetingSwitch';
+import MeetingCapacityInput from '../components/meetingCapacityInput';
 
 function frontDesk() {
     return (
@@ -34,7 +35,8 @@ function frontDesk() {
 
             <Row>
                 <Col sm={3}>
-                    <MeetingSwitch />
+                    {/*<MeetingSwitch />*/}
+                    <MeetingCapacityInput />
                 </Col>
             </Row>
         </Container>
