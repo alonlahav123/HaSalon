@@ -25,6 +25,7 @@ import FrontDesk from './pages/frontDesk';
 import Registration from './pages/registration'
 import Login from './pages/login'
 import ResetPassword from './pages/resetpassword'
+import Wallet from './pages/wallet'
 
 export default function App() {
   
@@ -85,6 +86,9 @@ export default function App() {
           </Route>
           <Route path="/forgot">
             <ResetPassword/>
+          </Route>
+          <Route path="/wallet">
+            <Wallet/>
           </Route>
           <Route path="/">
             <Home />
