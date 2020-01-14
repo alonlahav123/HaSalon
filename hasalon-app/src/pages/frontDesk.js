@@ -4,12 +4,15 @@ import { Container, Col, Row } from "react-bootstrap";
 import * as firebase from "firebase";
 
 import CapacityCounter from "../components/capacityCounter";
-import ResetButton from '../components/ResetButton';
+import ResetButton from "../components/ResetButton";
 import CapacityButton from "../components/capacityButton";
 import FrontDeskCalendar from "../components/frontDeskCalendar";
 import MeetingCapacityInput from "../components/meetingCapacityInput";
 
-function frontDesk() {
+function FrontDesk() {
+  const [amountInMeeting, setAmountInMeeting] = useState(0);
+  const [meetingTakingPlace, setMeetingTakingPlace] = useState(0);
+
   var user = firebase.auth().currentUser;
   if (user != null) {
     const uid = user.uid;
@@ -46,6 +49,12 @@ function frontDesk() {
               <MeetingCapacityInput />
             </Col>
           </Row>
+
+          <Row>
+            <Col>
+              <ResetButton amountInMeeting={amountInMeeting}  />
+            </Col>
+          </Row>
         </Col>
 
         <Col>
@@ -60,4 +69,4 @@ function frontDesk() {
   );
 }
 
-export default frontDesk;
+export default FrontDesk;
