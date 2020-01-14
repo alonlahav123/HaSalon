@@ -25,6 +25,10 @@ function MeetingCapacityInput(props) {
         const nextValue = isNaN(parsed) ? "" : parsed;
         setInputMeetingCapacity(nextValue);
     }, []);
+    
+    // DB.collection('simpleData').doc('persons').onSnapshot((doc)=>{
+    //     document.getElementById('meetingCapacityInput').value=doc.data().meetingCapacity;
+    // })
 
     return (
         <div>

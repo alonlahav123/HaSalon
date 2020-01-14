@@ -3,6 +3,7 @@ import "./frontDesk.css";
 import { Container, Col, Row } from "react-bootstrap";
 
 import CapacityCounter from "../components/capacityCounter";
+import ResetButton from '../components/ResetButton';
 import CapacityButton from "../components/capacityButton";
 import FrontDeskCalendar from "../components/frontDeskCalendar";
 import MeetingSwitch from "../components/meetingSwitch";

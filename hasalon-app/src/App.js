@@ -22,9 +22,10 @@ import {
 import Home from './pages/home';
 import Tracker from './pages/tracker';
 import FrontDesk from './pages/frontDesk';
-import Registration from './pages/registration'
-import Login from './pages/login'
-import ResetPassword from './pages/resetpassword'
+import Registration from './pages/registration';
+import Login from './pages/login';
+import ResetPassword from './pages/resetpassword';
+import ResetButton from './components/ResetButton';
 
 export default function App() {
   
