@@ -4,6 +4,7 @@ import { Container, Col, Row } from "react-bootstrap";
 import * as firebase from "firebase";
 
 import CapacityCounter from "../components/capacityCounter";
+import ResetButton from '../components/ResetButton';
 import CapacityButton from "../components/capacityButton";
 import FrontDeskCalendar from "../components/frontDeskCalendar";
 import MeetingCapacityInput from "../components/meetingCapacityInput";
