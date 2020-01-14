@@ -3,6 +3,7 @@ import 'firebase/firestore';
 import DB from "../firestore";
 import Button from 'react-bootstrap/Button';
 import firebase from 'firebase/app';
+// import MeetingCapacityInput from './meetingCapacityInput';
 
 
 function ResetButton(props) {
@@ -23,9 +24,15 @@ function ResetCapacity(props) {
     if (capacitySomething) {
         // if ismeeting is false 
         DB.collection('simpleData').doc('persons').update({amountOfPeople:0, capacity:(currentCapacity+meetingRoomTotal), isMeeting: false, meetingCapacity:0});        
+        // MeetingCapacityInput().getElementById('meetingCapacityInput').value=0;
     }else{
         DB.collection('simpleData').doc('persons').update({amountOfPeople:0, isMeeting: false, meetingCapacity:0});
+        // MeetingCapacityInput().getElementById('meetingCapacityInput').value=0;
     }
     // meetingRoomTotal
+    // DB.collection('simpleData').doc('persons').onSnapshot((doc)=>{
+    //     document.getElementById('meetingCapacityInput').value=doc.data().meetingCapacity;
+    // })
+    // MeetingCapacityInput.getElementById('meetingCapacityInput').value=0;
 }
 export default ResetButton;
