@@ -7,25 +7,31 @@ import {
 } from "react-bootstrap";
 import * as firebase from "firebase";
 
-var user = firebase.auth().currentUser;
-var name, email, photoUrl, uid, emailVerified;
 
 function CouchPointsWallet(props) {
-    const [usersCouchPoints, setUsersCouchPoints] = useState(0);
-    if (user != null) {
-        uid = user.uid;
-        console.log(uid);
-        DB.collection("users").doc(uid).onSnapshot((doc) => {
-            setUsersCouchPoints(doc.data().userCouchPoints);
-        }).catch(function (error) {
-            alert(error);
-        });
-    }
-    console.log(uid);
+ const [usersCouchPoints, setUsersCouchPoints] = useState(0);
+    firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+            if (user != null) {
+                console.log(user.uid);
+                DB.collection("users").doc(user.uid).onSnapshot((doc) => {
+                    setUsersCouchPoints(doc.data().userCouchPoints);
+                    console.log(usersCouchPoints)
+                });
+            } else {
+                console.log("USER IS NULL")
+            }
+        } else {
+            // No user is signed in.
+            console.log("null")
+        }
+    });
+
+
     return(
     <div>
         <Card>
-            <Card.Header>Featured</Card.Header>
+            <Card.Header>CouchPouch™</Card.Header>
             <Card.Body>
                 <Card.Title>Your Couch Points Balence</Card.Title>
                 <Card.Text>

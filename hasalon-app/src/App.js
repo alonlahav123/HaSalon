@@ -20,7 +20,6 @@ import {
 
 
 import Home from './pages/home';
-import Tracker from './pages/tracker';
 import FrontDesk from './pages/frontDesk';
 import Registration from './pages/registration'
 import Login from './pages/login'
@@ -29,6 +28,16 @@ import Wallet from './pages/wallet'
 
 export default function App() {
   
+  const [loginState, setLoginState] = useState(false);
+
+  firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+          setLoginState(true)
+          }
+          else {
+          setLoginState(false)
+          }
+  });
 
   return (
     <Router>
@@ -51,18 +60,11 @@ export default function App() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
-              <Nav.Link href="/tracker">Tracker</Nav.Link>
-              <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-              </NavDropdown>
+              {/*<Nav.Link href="/tracker">Tracker</Nav.Link>*/}
             </Nav>
-            <Nav>
-              <Nav.Link href="/login">Login</Nav.Link>
-            </Nav>
+            
+              {loginState ? <LoggedInUserNav/> : <RegularUserNav/>}
+            
             {/* <Form inline>
               <FormControl type="text" placeholder="Search" className="mr-sm-2" />
               <Button variant="outline-success">Search</Button>
@@ -73,9 +75,10 @@ export default function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/tracker">
+          {/*<Route path="/tracker">
             <Tracker />
-          </Route><Route path="/frontdesk">
+          </Route>*/}
+          <Route path="/frontdesk">
             <FrontDesk />
           </Route>
           <Route path="/registration">
@@ -99,3 +102,21 @@ export default function App() {
   );
 }
 
+function LoggedInUserNav(){
+  return(
+   <Nav>  
+  <Nav.Link href="/wallet" key={`2`}>Wallet</Nav.Link>
+  <Nav.Link onClick={firebaseLogout} key={`1`}>Logout</Nav.Link>
+  </Nav>
+  );
+}
+function firebaseLogout(){
+  firebase.auth().signOut();
+}
+function RegularUserNav() {
+  return(
+    <Nav>
+    <Nav.Link href="/login" key={`1`}>Login</Nav.Link>
+    </Nav>
+  );
+}
