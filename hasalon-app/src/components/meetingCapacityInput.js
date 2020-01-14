@@ -23,7 +23,7 @@ function MeetingCapacityInput(props) {
       ).defaultValue = doc.data().meetingCapacity;
     });
 
-  const handleChange = useCallback(event => {
+const handleChange = useCallback(event => {
     const parsed = parseFloat(event.target.value, 10);
     const nextValue = isNaN(parsed) ? "" : parsed;
     setInputMeetingCapacity(nextValue);
