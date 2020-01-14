@@ -16,6 +16,7 @@ function MeetingSwitch(props) {
         document.getElementById('switch').checked = doc.data().isMeeting;
     })
 
+
     return (
         <label className="switch">
             <input type="checkbox" id='switch' onClick={() => { test() }} />

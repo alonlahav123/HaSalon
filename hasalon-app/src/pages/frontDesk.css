@@ -1,7 +1,11 @@
-h2 {
+h1 {
     text-align: center;
 }
 
 .calendar {
     grid-column: 2 / span 1;
+}
+
+.rowContainer {
+    height: 40vh;
 }
