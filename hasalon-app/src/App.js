@@ -26,6 +26,9 @@ import Login from './pages/login'
 import ResetPassword from './pages/resetpassword'
 import Wallet from './pages/wallet'
 
+// _+ on keyboard for +_ people in capacity buttons
+
+
 export default function App() {
   
   const [loginState, setLoginState] = useState(false);

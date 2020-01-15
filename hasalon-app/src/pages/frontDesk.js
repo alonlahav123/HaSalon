@@ -44,6 +44,7 @@ function frontDesk() {
           <Row className="rowContainer align-items-center">
             <Col lg={{ span: 6, offset: 3 }}>
               <MeetingCapacityInput />
+              <ResetButton/>
             </Col>
           </Row>
         </Col>
