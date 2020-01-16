@@ -29,12 +29,8 @@ function MeetingCapacityInput(props) {
   }, []);
 
   if (props.resetMeetingInputs) {
-    resetInputs();
-    props.setResetMeetingInputs(false);
-  }
-
-  function resetInputs() {
     document.getElementById("switch").checked = false;
+    props.setResetMeetingInputs(false);
   }
 
   return (
