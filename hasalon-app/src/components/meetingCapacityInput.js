@@ -4,7 +4,12 @@ import DB from "../firestore";
 import { InputGroup, FormControl, Container, Col, Row } from "react-bootstrap";
 import "./meetingSwitch.css";
 
-DB.collection("simpleData")
+function MeetingCapacityInput(props) {
+  const [inputMeetingCapacity, setInputMeetingCapacity] = useState(0);
+  const [checked, setChecked] = useState(false);
+  const [, forceUpdate] = React.useState(0);
+
+  DB.collection("simpleData")
   .doc("persons")
   .get()
   .then(function(doc) {
@@ -16,11 +21,6 @@ DB.collection("simpleData")
       "meetingCapacityInput"
     ).defaultValue = doc.data().meetingCapacity;
   });
-
-function MeetingCapacityInput(props) {
-  const [inputMeetingCapacity, setInputMeetingCapacity] = useState(0);
-  const [checked, setChecked] = useState(false);
-  const [, forceUpdate] = React.useState(0);
 
   const handleChange = useCallback(event => {
     const parsed = parseFloat(event.target.value, 10);
