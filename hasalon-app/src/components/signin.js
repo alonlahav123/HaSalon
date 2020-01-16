@@ -71,6 +71,7 @@ function logInWithEmailAndPassword(email, password) {
     alert(errorMessage)
     // ...
   });
+  alert("Sucess")
 }
 
 
