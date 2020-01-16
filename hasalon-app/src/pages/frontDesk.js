@@ -10,8 +10,11 @@ import FrontDeskCalendar from "../components/frontDeskCalendar";
 import MeetingCapacityInput from "../components/meetingCapacityInput";
 
 function FrontDesk() {
-  const [amountInMeeting, setAmountInMeeting] = useState(0);
-  const [meetingTakingPlace, setMeetingTakingPlace] = useState(0);
+  const [resetMeetingInputs, setResetMeetingInputs] = useState(false);
+
+  function callback(input) {
+    setResetMeetingInputs(input);
+  }
 
   var user = firebase.auth().currentUser;
   if (user != null) {
@@ -20,6 +23,7 @@ function FrontDesk() {
   } else {
     console.log("user is null");
   }
+
   return (
     <Container fluid="true">
       <Row>
@@ -46,13 +50,13 @@ function FrontDesk() {
 
           <Row className="rowContainer align-items-center">
             <Col lg={{ span: 6, offset: 3 }}>
-              <MeetingCapacityInput />
+              <MeetingCapacityInput resetMeetingInputs={resetMeetingInputs} setResetMeetingInputs={callback} />
             </Col>
           </Row>
 
           <Row>
             <Col>
-              <ResetButton amountInMeeting={amountInMeeting}  />
+              <ResetButton setResetMeetingInputs={callback} />
             </Col>
           </Row>
         </Col>
@@ -68,5 +72,6 @@ function FrontDesk() {
     </Container>
   );
 }
+
 
 export default FrontDesk;

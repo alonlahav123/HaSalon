@@ -7,11 +7,13 @@ import firebase from 'firebase/app';
 
 
 function ResetButton(props) {
-    return(<Button className='ResetButton' onClick={()=>{ResetCapacity()}}>
+
+    return(<Button className='ResetButton' onClick={()=>{ResetCapacity(props)}}>
         <div className='Reset Button'> Reset count to zero</div>
     </Button>);
 
 }
+
 function ResetCapacity(props) {
     let capacitySomething;
     let currentCapacity;
@@ -23,10 +25,12 @@ function ResetCapacity(props) {
 
     if (capacitySomething) {
         // if ismeeting is false 
-        DB.collection('simpleData').doc('persons').update({amountOfPeople:0, capacity:(currentCapacity+meetingRoomTotal), isMeeting: false, meetingCapacity:0});        
+        DB.collection('simpleData').doc('persons').update({amountOfPeople:0, capacity:(currentCapacity+meetingRoomTotal), isMeeting: false, meetingCapacity:0});   
+        props.setResetMeetingInputs(true);
         // MeetingCapacityInput().getElementById('meetingCapacityInput').value=0;
     }else{
         DB.collection('simpleData').doc('persons').update({amountOfPeople:0, isMeeting: false, meetingCapacity:0});
+        props.setResetMeetingInputs(true);
         // MeetingCapacityInput().getElementById('meetingCapacityInput').value=0;
     }
     // meetingRoomTotal
@@ -35,4 +39,5 @@ function ResetCapacity(props) {
     // })
     // MeetingCapacityInput.getElementById('meetingCapacityInput').value=0;
 }
+
 export default ResetButton;
