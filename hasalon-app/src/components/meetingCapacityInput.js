@@ -10,33 +10,29 @@ function MeetingCapacityInput(props) {
   const [, forceUpdate] = React.useState(0);
 
   DB.collection("simpleData")
-  .doc("persons")
-  .get()
-  .then(function(doc) {
-    document.getElementById("switch").checked = doc.data().isMeeting;
-    document.getElementById(
-      "meetingCapacityInput"
-    ).disabled = doc.data().isMeeting;
-    document.getElementById(
-      "meetingCapacityInput"
-    ).defaultValue = doc.data().meetingCapacity;
-  });
+    .doc("persons")
+    .get()
+    .then(function(doc) {
+      console.log("disabled: " + doc.data().isMeeting);
+      document.getElementById(
+        "meetingCapacityInput"
+      ).disabled = doc.data().isMeeting;
+      document.getElementById("switch").checked = doc.data().isMeeting;
+      document.getElementById(
+        "meetingCapacityInput"
+      ).defaultValue = doc.data().meetingCapacity;
+    });
 
-  const handleChange = useCallback(event => {
+const handleChange = useCallback(event => {
     const parsed = parseFloat(event.target.value, 10);
     const nextValue = isNaN(parsed) ? "" : parsed;
     setInputMeetingCapacity(nextValue);
   }, []);
 
-  if (props.resetMeetingInputs) {
-    document.getElementById("switch").checked = false;
-    props.setResetMeetingInputs(false);
-  }
-
   return (
     <Container>
       <Row>
-        <Col className="text-center">
+        <Col className='text-center'>
           <InputGroup className="mb-3">
             <FormControl
               aria-label="Default"
@@ -57,7 +53,7 @@ function MeetingCapacityInput(props) {
       </Row>
 
       <Row>
-        <Col className="text-center">
+        <Col className='text-center'>
           <label className="switch">
             <input
               type="checkbox"
