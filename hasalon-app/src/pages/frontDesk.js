@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import "./frontDesk.css";
-import { Container, Col, Row } from "react-bootstrap";
+import {
+  Container,
+  Col,
+  Row,
+  Card
+} from "react-bootstrap";
 import * as firebase from "firebase";
 
 import CapacityCounter from "../components/capacityCounter";
@@ -9,14 +14,15 @@ import CapacityButton from "../components/capacityButton";
 import FrontDeskCalendar from "../components/frontDeskCalendar";
 import MeetingCapacityInput from "../components/meetingCapacityInput";
 
-function frontDesk() {
-  var user = firebase.auth().currentUser;
-  if (user != null) {
-    const uid = user.uid;
-    console.log(uid);
-  } else {
-    console.log("user is null");
-  }
+function FrontDesk() {
+  const [loginState, setLoginState] = useState(false);
+  firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        setLoginState(true)
+      } else {
+        setLoginState(false)
+      }
+  });
   return (
     <Container fluid="true">
       <Row>
@@ -25,6 +31,13 @@ function frontDesk() {
         </Col>
       </Row>
 
+    {loginState ? <IsLogin/> : <IsNotLogin/>}
+    </Container>
+  );
+}
+
+function IsLogin(){
+  return(
       <Row>
         <Col>
           <Row className="rowContainer align-items-center">
@@ -57,8 +70,23 @@ function frontDesk() {
           </Row>
         </Col>
       </Row>
-    </Container>
   );
 }
 
-export default frontDesk;
+function IsNotLogin() {
+return (
+  <div>
+    <Card>
+        <Card.Header>Front Desk</Card.Header>
+          <Card.Body>
+            <Card.Title>Please Login to view this page</Card.Title>
+            <Card.Text>
+              please <a href="/login">Login</a> before visiting this page
+            </Card.Text>
+        </Card.Body>
+    </Card>
+  </div>);
+
+}
+
+export default FrontDesk;

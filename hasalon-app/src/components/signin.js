@@ -12,10 +12,6 @@ function SignInForm(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   return (
-    <div>
-      <Card>
-        <Card.Header>Login</Card.Header>
-        <Card.Body>
           <Form onSubmit={onSubmit}>
             <Form.Group controlId="formBasicEmail">
               <Form.Label>Email address</Form.Label>
@@ -50,9 +46,6 @@ function SignInForm(props) {
               Submit
             </Button>
           </Form>
-        </Card.Body>
-      </Card>
-    </div>
   );
   function onSubmit(event) {
     event.preventDefault();

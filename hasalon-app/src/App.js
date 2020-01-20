@@ -25,6 +25,7 @@ import Registration from './pages/registration'
 import Login from './pages/login'
 import ResetPassword from './pages/resetpassword'
 import Wallet from './pages/wallet'
+import Admin from './pages/admin'
 
 // _+ on keyboard for +_ people in capacity buttons
 
@@ -95,6 +96,9 @@ export default function App() {
           </Route>
           <Route path="/wallet">
             <Wallet/>
+          </Route>
+          <Route path="/admin">
+            <Admin/>
           </Route>
           <Route path="/">
             <Home />
