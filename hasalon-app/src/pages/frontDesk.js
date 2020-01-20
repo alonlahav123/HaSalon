@@ -13,6 +13,7 @@ import ResetButton from '../components/ResetButton';
 import CapacityButton from "../components/capacityButton";
 import FrontDeskCalendar from "../components/frontDeskCalendar";
 import MeetingCapacityInput from "../components/meetingCapacityInput";
+import FacebookFeed from '../components/facebookEvents';
 
 function FrontDesk() {
   const [loginState, setLoginState] = useState(false);
