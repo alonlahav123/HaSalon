@@ -10,11 +10,9 @@ function home() {
         <div>
             <Container fluid='true'>
                 <Row>
-                    <Col></Col>
-                    <Col>
+                    <Col className="text-center">
                         <h2>Project: ReSalon</h2>
                     </Col>
-                    <Col></Col>
                 </Row>
                 <Row className="rowContainer align-items-center">
                     <Col>
@@ -27,7 +25,7 @@ function home() {
                     </Col>
                     <Col>
                         <FacebookEvent/>
-                    </Col>
+                    </Col> 
                 </Row>
             </Container>
         </div>
