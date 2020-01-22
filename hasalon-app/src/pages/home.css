@@ -1,1 +1,19 @@
-body{}
+.align-items-center{
+    text-align: center;
+
+}
+.rowHeight{
+    height: 20vh;
+}
+.FBstacker{
+
+    
+}
+@media only screen and (max-width: 430px) {
+    .FBstacker {
+      
+      display: flex;
+      flex-direction: column;
+  
+    }
+  }

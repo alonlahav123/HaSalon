@@ -3,29 +3,32 @@ import FacebookFeed from '../components/FacebookFeed';
 import FacebookEvent from '../components/facebookEvents';
 import { Container, Col, Row } from "react-bootstrap";
 import CapacityBar from '../components/capacityBar';
+import './home.css';
 
 
 function home() {
     return (
         <div>
             <Container fluid='true'>
+
                 <Row>
                     <Col className="text-center">
                         <h2>Project: ReSalon</h2>
                     </Col>
                 </Row>
-                <Row className="rowContainer align-items-center">
+                <Row className="rowHeight align-items-center">
                     <Col>
                         <CapacityBar/>
                     </Col>
                 </Row>
                 <Row>
-                    <Col>
-                        <FacebookFeed/>
-                    </Col>
-                    <Col>
-                        <FacebookEvent/>
-                    </Col> 
+                    <Container>
+                        <Row className='FBstacker'>
+                            <Col className='center' xs={6}>
+                                <FacebookEvent/>
+                            </Col>
+                        </Row>
+                    </Container>
                 </Row>
             </Container>
         </div>
