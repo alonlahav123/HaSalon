@@ -29,10 +29,6 @@ function SignupForm(props) {
   const [password, setPassword] = useState("");
   const [code, setCode] = useState("");
   return (
-    <div>
-      <Card>
-        <Card.Header>Register</Card.Header>
-        <Card.Body>
           <Form onSubmit={onSubmit}>
             <Form.Group controlId="formBasicName">
               <Form.Label>Your Name</Form.Label>
@@ -84,9 +80,6 @@ function SignupForm(props) {
               Submit
             </Button>
           </Form>
-        </Card.Body>
-      </Card>
-    </div>
   );
   function onSubmit(event) {
     event.preventDefault();

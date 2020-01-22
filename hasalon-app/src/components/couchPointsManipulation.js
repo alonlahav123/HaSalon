@@ -8,7 +8,7 @@ import {
 import * as firebase from "firebase";
 
 
-function CouchPointsWallet(props) {
+function CouchPointsAdmin(props) {
     const [usersCouchPoints, setUsersCouchPoints] = useState(0);
     const [loginState, setLoginState] = useState(false);
     firebase.auth().onAuthStateChanged((user) => {
@@ -83,4 +83,4 @@ function IsNotLogin(props){
 }
 
 
-export default CouchPointsWallet;
+export default CouchPointsAdmin;

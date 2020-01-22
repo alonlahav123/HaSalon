@@ -10,16 +10,11 @@ function home() {
     return (
         <div>
             <Container fluid='true'>
-                <Row 
-                className=' '
-                >
-                    <Col xs={1} lg={2}></Col>
-                    <Col xs={9} lg={8}
-                    className='colContainer align-items-center'
-                    >
+
+                <Row>
+                    <Col className="text-center">
                         <h2>Project: ReSalon</h2>
                     </Col>
-                    <Col xs={1} lg={2}></Col>
                 </Row>
                 <Row className="rowHeight align-items-center">
                     <Col>
@@ -29,19 +24,8 @@ function home() {
                 <Row>
                     <Container>
                         <Row className='FBstacker'>
-                            {/* <Col 
-                            xs={6}
-                            >
-                                 <Container fluid='true'>
-                                 <FacebookFeed/>
-                                 </Container> 
-                            </Col> */}
-                            <Col className='center'
-                            xs={6}
-                            >
-                                {  /* <Container fluid='true'> */}
-                                    <FacebookEvent/>
-                                {/* </Container> */}
+                            <Col className='center' xs={6}>
+                                <FacebookEvent/>
                             </Col>
                         </Row>
                     </Container>

@@ -21,14 +21,12 @@ import {
 
 import Home from './pages/home';
 import FrontDesk from './pages/frontDesk';
-import Registration from './pages/registration';
-import Login from './pages/login';
-import ResetPassword from './pages/resetpassword';
-import Wallet from './pages/wallet';
-// import Tracker from './pages/tracker';
 
-// _+ on keyboard for +_ people in capacity buttons
-
+import Registration from './pages/registration'
+import Login from './pages/login'
+import ResetPassword from './pages/resetpassword'
+import Wallet from './pages/wallet'
+import Admin from './pages/admin'
 
 export default function App() {
   
@@ -96,6 +94,9 @@ export default function App() {
           </Route>
           <Route path="/wallet">
             <Wallet/>
+          </Route>
+          <Route path="/admin">
+            <Admin/>
           </Route>
           <Route path="/">
             <Home />
