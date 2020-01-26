@@ -19,6 +19,7 @@ function CapacityCounter(props) {
 
   return (
     <div className="couchBar">
+    <div className='titleToBar'>Real-time fullness of HaSalon:</div>
       {isLoading ? <Spinner animation="border" /> : <div>{couches}</div>}
     </div>
   );
