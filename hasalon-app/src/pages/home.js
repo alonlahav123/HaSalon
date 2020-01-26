@@ -12,7 +12,7 @@ function home() {
             <Container fluid='true'>
                 <Row>
                     <Col className="text-center">
-                        <h2>Project: ReSalon</h2>
+                        <h3>Welcome to the HaSalon App</h3>
                     </Col>
                 </Row>
                 <Row className="rowHeight align-items-center">
