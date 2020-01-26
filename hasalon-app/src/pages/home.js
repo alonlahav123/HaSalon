@@ -19,14 +19,10 @@ function home() {
             <CapacityBar />
           </Col>
         </Row>
-        <Row className="rowHeight align-items-center">
-          <Container>
-            <Row className="FBstacker">
-              <Col>
-                <FacebookEvent />
-              </Col>
-            </Row>
-          </Container>
+        <Row className="FBstacker rowHeight align-items-center">
+          <Col>
+            <FacebookEvent />
+          </Col>
         </Row>
       </Container>
     </div>

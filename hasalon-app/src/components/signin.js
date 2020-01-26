@@ -3,10 +3,13 @@ import "./capacityCounter.css";
 import "firebase/firestore";
 import { Form, Button, Card} from "react-bootstrap";
 import * as firebase from "firebase";
+import { useHistory } from "react-router-dom";
 
 function SignInForm(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  let history = useHistory();
+  
   return (
     <Form onSubmit={onSubmit}>
       <Form.Group controlId="formBasicEmail">
@@ -47,14 +50,15 @@ function SignInForm(props) {
     event.preventDefault();
     console.log({ email }, { password });
 
-    logInWithEmailAndPassword(email, password);
+    logInWithEmailAndPassword(email, password, history);
   }
 }
 
-function logInWithEmailAndPassword(email, password) {
+function logInWithEmailAndPassword(email, password, history) {
   firebase
     .auth()
     .signInWithEmailAndPassword(email, password)
+    .then(history.push('/'))
     .catch(function(error) {
       // Handle Errors here.
       var errorCode = error.code;
@@ -62,7 +66,7 @@ function logInWithEmailAndPassword(email, password) {
       alert(errorMessage);
       // ...
     });
-  alert("Sucess");
+    console.log(history)
 }
 
 export default SignInForm;

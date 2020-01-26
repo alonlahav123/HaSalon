@@ -56,7 +56,7 @@ function IsLogin(props){
                         <Card>
                             <Card.Header>CouchPouch™</Card.Header>
                             <Card.Body>
-                                <Card.Title>Your Couch Points Balence</Card.Title>
+                                <Card.Title>Your Couch Points Balance</Card.Title>
                                 <Card.Text>
                                 {props.usersCouchPoints}
                                 </Card.Text>
