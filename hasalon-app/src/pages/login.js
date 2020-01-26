@@ -1,23 +1,23 @@
 import React, { useState } from "react";
 import SignInForm from "../components/signin";
-import {
-  Form,
-  Button,
-  Card,
-} from "react-bootstrap";
+import { Form, Button, Card, Container, Col, Row} from "react-bootstrap";
 
 function Login() {
   return (
-    <div>
-        <Card>
-        <Card.Header>Login</Card.Header>
-        <Card.Body>
-      <SignInForm/>
-          </Card.Body>
-      </Card>
-    </div>
+    <Container>
+      <Row><p></p></Row>
+      <Row>
+        <Col lg={{ span: 8, offset: 2 }} xs={{ span: 12, offset: 0 }}>
+          <Card>
+            <Card.Header>Login</Card.Header>
+            <Card.Body>
+              <SignInForm />
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
+    </Container>
   );
 }
-
 
 export default Login;
