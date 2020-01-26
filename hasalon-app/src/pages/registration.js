@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import SignupForm from "../components/register";
 import { Card, Container, Col, Row } from "react-bootstrap";
+import NavBar from '../components/navBar.js'
 
 function Registration() {
   const [isAlertShown, setIsAlertShown] = useState(false);
   return (
+    <div>
+    <NavBar/>
     <Container>
       <Row>
         <p></p>
@@ -20,6 +23,7 @@ function Registration() {
         </Col>
       </Row>
     </Container>
+    </div>
   );
 }
 

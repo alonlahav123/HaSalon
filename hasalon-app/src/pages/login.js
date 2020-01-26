@@ -3,10 +3,12 @@ import SignInForm from "../components/signin";
 import {
   Card, Container, Row, Col
 } from "react-bootstrap";
-
+import NavBar from '../components/navBar.js'
 
 function Login() {
   return (
+    <div>
+    <NavBar/>
     <Container>
       <Row><p></p></Row>
       <Row>
@@ -20,6 +22,7 @@ function Login() {
         </Col>
       </Row>
     </Container>
+    </div>
   );
 }
 
