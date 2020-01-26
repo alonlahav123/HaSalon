@@ -20,6 +20,7 @@ function CapacityCounter(props) {
   return (
     <div className="couchBar">
       {isLoading ? <Spinner animation="border" /> : <div>{couches}</div>}
+      <div className='titleToBar'>Real-time capacity of HaSalon</div>
     </div>
   );
 }
