@@ -65,6 +65,7 @@ function SignupForm(props) {
               <Form.Text className="text-muted">
                 Password must be 6 or more characters.
               </Form.Text>
+            </Form.Group>
 
             <Form.Group controlId="formBasicRegCode">
               <Form.Label>Registration Code</Form.Label>
@@ -74,8 +75,11 @@ function SignupForm(props) {
                 type="text"
                 placeholder="Registration Code"
               />
+              <Form.Text className="text-muted">
+                Become a member at the front desk to get code.
+              </Form.Text>
             </Form.Group>
-            </Form.Group>
+            
             <Button variant="primary" type="submit">
               Submit
             </Button>

@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import FacebookFeed from '../components/FacebookFeed';
 import FacebookEvent from '../components/facebookEvents';
-import { Container, Col, Row } from "react-bootstrap";
+import { Card, Container, Col, Row } from "react-bootstrap";
 import CapacityBar from '../components/capacityBar';
+import './home.css';
 
 
 function home() {
@@ -10,24 +11,25 @@ function home() {
         <div>
             <Container fluid='true'>
                 <Row>
-                    <Col></Col>
-                    <Col>
-                        <h2>Project: ReSalon</h2>
-                    </Col>
-                    <Col></Col>
-                </Row>
-                <Row className="rowContainer align-items-center">
-                    <Col>
-                        <CapacityBar/>
+                    <Col className="text-center">
+                        <h3>Welcome to the HaSalon App</h3>
                     </Col>
                 </Row>
-                <Row>
+                <Row className="rowHeight align-items-center">
                     <Col>
-                        <FacebookFeed/>
+                        <Card>
+                           <CapacityBar/>
+                        </Card>
                     </Col>
-                    <Col>
-                        <FacebookEvent/>
-                    </Col>
+                </Row>
+                <Row className='rowHeight align-items-center'>
+                    <Container>
+                        <Row className='FBstacker'>
+                            <Col>
+                                <FacebookEvent/>
+                            </Col>
+                        </Row>
+                    </Container>
                 </Row>
             </Container>
         </div>

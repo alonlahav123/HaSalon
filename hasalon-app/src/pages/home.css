@@ -1,1 +1,29 @@
-body{}
+.align-items-center{
+    text-align: center;
+
+}
+.rowHeight{
+    height: 20vh;
+}
+.container{
+  padding-top: 60px;
+}
+@media only screen and (max-width: 430px) {
+  .container {
+    
+    padding-top: 30px;
+
+  }
+}
+.FBstacker{
+
+    
+}
+@media only screen and (max-width: 430px) {
+    .FBstacker {
+      
+      display: flex;
+      flex-direction: column;
+  
+    }
+  }

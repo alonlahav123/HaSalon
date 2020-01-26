@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Spinner from "react-bootstrap/Spinner";
 import "./capacityBar.css";
 import DB from "../firestore";
+import couchLogo from './HaSalonLogo.png';
 
 function CapacityCounter(props) {
   const [isLoading, setIsLoading] = useState(true);
@@ -19,6 +20,7 @@ function CapacityCounter(props) {
   return (
     <div className="couchBar">
       {isLoading ? <Spinner animation="border" /> : <div>{couches}</div>}
+      <div className='titleToBar'>Real-time capacity of HaSalon</div>
     </div>
   );
 }
@@ -64,7 +66,7 @@ function CouchIcon(props) {
   return (
     <img
       className="couchIcon"
-      src="https://marketplace.canva.com/MACiiSbAzDA/1/thumbnail_large/canva-couch-icon-image-MACiiSbAzDA.png"
+      src={couchLogo}
     />
   );
 }
@@ -73,7 +75,7 @@ function GreyedOutCouchIcon(props) {
   return (
     <img
       className="greyedOut couchIcon"
-      src="https://marketplace.canva.com/MACiiSbAzDA/1/thumbnail_large/canva-couch-icon-image-MACiiSbAzDA.png"
+      src={couchLogo}
     />
   );
 }

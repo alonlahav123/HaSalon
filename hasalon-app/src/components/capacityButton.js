@@ -14,7 +14,6 @@ function capacityButton(props) {
 }
 
 function updateCapacity(multiplier) {
-
     DB.collection('simpleData').doc('persons').get().then( function(doc) {
         let amntPeople = doc.data().amountOfPeople;
 

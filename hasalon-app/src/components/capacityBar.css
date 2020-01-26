@@ -1,5 +1,17 @@
+.titleToBar{
+    color:brown;
+    font-size: 3vh;
+}
+.couchBar{
+    border: 2px bold grey;
+}
 .couchIcon {
-    width: 100px;
+    width: 125px;
+}
+@media only screen and (max-width: 425px) {
+    .couchIcon{
+        width:75px;
+    }
 }
 
 .greyedOut {
