@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import FacebookFeed from '../components/FacebookFeed';
 import FacebookEvent from '../components/facebookEvents';
-import { Container, Col, Row } from "react-bootstrap";
+import { Card, Container, Col, Row } from "react-bootstrap";
 import CapacityBar from '../components/capacityBar';
 import './home.css';
 
@@ -12,12 +12,14 @@ function home() {
             <Container fluid='true'>
                 <Row>
                     <Col className="text-center">
-                        <h2>Project: ReSalon</h2>
+                        <h3>Welcome to the HaSalon App</h3>
                     </Col>
                 </Row>
                 <Row className="rowHeight align-items-center">
                     <Col>
-                        <CapacityBar/>
+                        <Card>
+                           <CapacityBar/>
+                        </Card>
                     </Col>
                 </Row>
                 <Row className='rowHeight align-items-center'>
