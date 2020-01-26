@@ -27,19 +27,30 @@ import Login from './pages/login'
 import ResetPassword from './pages/resetpassword'
 import Wallet from './pages/wallet'
 import Admin from './pages/admin'
+import Tracker from './pages/tracker.js'
 
 export default function App() {
   
   const [loginState, setLoginState] = useState(false);
-
+  const [userType, setUserType] = useState(0);
   firebase.auth().onAuthStateChanged((user) => {
-        if (user) {
-          setLoginState(true)
-          }
-          else {
-          setLoginState(false)
-          }
+      if (user) {
+        setLoginState(true)
+      } else {
+        setLoginState(false)
+      }
   });
+      firebase.auth().onAuthStateChanged(function (user) {
+        if (user != null) {
+          console.log(user.uid);
+          DB.collection("users").doc(user.uid).onSnapshot((doc) => {
+            setUserType(doc.data().userType)
+            console.log(userType)
+          });
+        } else {
+          console.log("USER IS NULL")
+        }
+      });
 
   return (
     <Router>
@@ -65,7 +76,7 @@ export default function App() {
               {/* <Nav.Link href="/tracker">Tracker</Nav.Link> */}
             </Nav>
             
-              {loginState ? <LoggedInUserNav/> : <RegularUserNav/>}
+              {loginState ? <LoggedInUserNav userType={userType}/> : <RegularUserNav/>}
             
             {/* <Form inline>
               <FormControl type="text" placeholder="Search" className="mr-sm-2" />
@@ -107,14 +118,37 @@ export default function App() {
   );
 }
 
-function LoggedInUserNav(){
-  return(
-   <Nav>  
-  <Nav.Link href="/wallet" key={`2`}>Wallet</Nav.Link>
-  <Nav.Link onClick={firebaseLogout} key={`1`}>Logout</Nav.Link>
-  </Nav>
-  );
+function LoggedInUserNav(props) {
+    if (props.userType == 1) {
+      return(
+        <Nav>  
+          <Nav.Link href="/frontdesk" key={`4`}>Front Desk Controls</Nav.Link>
+          <Nav.Link href="/admin" key={`3`}>Admin Panel</Nav.Link>
+          <Nav.Link href="/wallet" key={`2`}>Wallet</Nav.Link>
+          <Nav.Link onClick={firebaseLogout} key={`1`}>Logout</Nav.Link>
+        </Nav>
+      )
+    }
+    else if (props.userType == 2){
+      return(
+        <Nav>  
+          <Nav.Link href="/frontdesk" key={`3`}>Front Desk Controls</Nav.Link>
+          <Nav.Link href="/wallet" key={`2`}>Wallet</Nav.Link>
+          <Nav.Link onClick={firebaseLogout} key={`1`}>Logout</Nav.Link>
+        </Nav>
+      )
+
+    }
+    else{
+      return(
+        <Nav>  
+          <Nav.Link href="/wallet" key={`2`}>Wallet</Nav.Link>
+          <Nav.Link onClick={firebaseLogout} key={`1`}>Logout</Nav.Link>
+        </Nav>
+      )
+    }
 }
+
 function firebaseLogout(){
   firebase.auth().signOut();
 }

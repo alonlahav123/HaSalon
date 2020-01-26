@@ -6,6 +6,7 @@ import {
   Row,
   Card
 } from "react-bootstrap";
+import DB from "../firestore";
 import * as firebase from "firebase";
 
 import CapacityCounter from "../components/capacityCounter";
@@ -15,8 +16,11 @@ import FrontDeskCalendar from "../components/frontDeskCalendar";
 import MeetingCapacityInput from "../components/meetingCapacityInput";
 import FacebookFeed from '../components/facebookEvents';
 
+//OR = ||
+
 function FrontDesk() {
   const [loginState, setLoginState] = useState(false);
+  const [userType, setUserType] = useState(0);
   firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         setLoginState(true)
@@ -24,6 +28,17 @@ function FrontDesk() {
         setLoginState(false)
       }
   });
+      firebase.auth().onAuthStateChanged(function (user) {
+        if (user != null) {
+          console.log(user.uid);
+          DB.collection("users").doc(user.uid).onSnapshot((doc) => {
+            setUserType(doc.data().userType)
+            console.log(userType)
+          });
+        } else {
+          console.log("USER IS NULL")
+        }
+      });
   return (
     <Container fluid="true">
       <Row>
@@ -32,12 +47,26 @@ function FrontDesk() {
         </Col>
       </Row>
 
-    {loginState ? <IsLogin/> : <IsNotLogin/>}
+    {loginState ? <IsLogin userType={userType} /> : <IsNotLogin/>}
     </Container>
   );
 }
 
-function IsLogin(){
+function IsLogin(props){
+    if (props.userType == 1 || props.userType == 2) {
+        return(
+            <IsAdmin/>
+        )
+    }
+    else{
+        return(
+            <IsNotAdmin/>
+        )
+    }
+}
+
+function IsAdmin(props){
+
   return(
       <Row>
         <Col>
@@ -72,6 +101,24 @@ function IsLogin(){
         </Col>
       </Row>
   );
+
+}
+
+function IsNotAdmin(props){
+        return(
+                    <div>
+                        <Card>
+                            <Card.Header>Front Desk</Card.Header>
+                            <Card.Body>
+                                <Card.Title>This page is for Administrators only</Card.Title>
+                                <Card.Text>
+                                Sorry!
+                                </Card.Text>
+                            </Card.Body>
+                        </Card>
+                    </div>
+    );
+
 }
 
 function IsNotLogin() {
