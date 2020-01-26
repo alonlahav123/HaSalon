@@ -10,7 +10,6 @@ function home() {
     return (
         <div>
             <Container fluid='true'>
-
                 <Row>
                     <Col className="text-center">
                         <h2>Project: ReSalon</h2>
@@ -21,10 +20,10 @@ function home() {
                         <CapacityBar/>
                     </Col>
                 </Row>
-                <Row>
+                <Row className='rowHeight align-items-center'>
                     <Container>
                         <Row className='FBstacker'>
-                            <Col className='center' xs={6}>
+                            <Col>
                                 <FacebookEvent/>
                             </Col>
                         </Row>
