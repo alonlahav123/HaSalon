@@ -69,7 +69,13 @@ export default function App() {
           </ul>
         </nav> */}
         <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
-          <Navbar.Brand href="/">הסלון</Navbar.Brand>
+          <Navbar.Brand href="/">
+            <img 
+            src='./NavBarLogoWhite.png'
+            width='105'
+            height='40'
+            />
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">

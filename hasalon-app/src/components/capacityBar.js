@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Spinner from "react-bootstrap/Spinner";
+import {Spinner, Card} from "react-bootstrap";
 import "./capacityBar.css";
 import DB from "../firestore";
 import couchLogo from './HaSalonLogo.png';
@@ -20,7 +20,7 @@ function CapacityCounter(props) {
   return (
     <div className="couchBar">
       {isLoading ? <Spinner animation="border" /> : <div>{couches}</div>}
-      <div className='titleToBar'>Real-time capacity of HaSalon</div>
+      <Card.Text className="text-muted">Real-Time Capacity Tracker</Card.Text>
     </div>
   );
 }
