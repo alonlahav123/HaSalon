@@ -9,6 +9,7 @@ import {
 import DB from "../firestore";
 import * as firebase from "firebase";
 
+import NavBar from '../components/navBar.js'
 import CapacityCounter from "../components/capacityCounter";
 import ResetButton from '../components/ResetButton';
 import CapacityButton from "../components/capacityButton";
@@ -40,6 +41,7 @@ function FrontDesk() {
         }
       });
   return (
+    <div><NavBar/>
     <Container fluid="true">
       <Row>
         <Col>
@@ -49,6 +51,7 @@ function FrontDesk() {
 
     {loginState ? <IsLogin userType={userType} /> : <IsNotLogin/>}
     </Container>
+    </div>
   );
 }
 
