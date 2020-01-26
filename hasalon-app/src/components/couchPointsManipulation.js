@@ -72,7 +72,7 @@ function UserEntry(props) {
   }
 
   return (
-    <Card style={{ width:'25vw' }}>
+    <Card className='userCard'>
       <Card.Header>{userName}</Card.Header>
       <Card.Body>
         <b>Name: </b>
