@@ -1,0 +1,12 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.userCard {
+    width: 15vh;
+    height: 35vh;
+
+    margin: 5px;
+}
