@@ -21,15 +21,13 @@ import {
 
 import Home from './pages/home';
 import FrontDesk from './pages/frontDesk';
+
 import Registration from './pages/registration'
 import Login from './pages/login'
 import ResetPassword from './pages/resetpassword'
 import Wallet from './pages/wallet'
 import Admin from './pages/admin'
 import Tracker from './pages/tracker.js'
-
-// _+ on keyboard for +_ people in capacity buttons
-
 
 export default function App() {
   
@@ -75,7 +73,7 @@ export default function App() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
-              {/*<Nav.Link href="/tracker">Tracker</Nav.Link>*/}
+              {/* <Nav.Link href="/tracker">Tracker</Nav.Link> */}
             </Nav>
             
               {loginState ? <LoggedInUserNav userType={userType}/> : <RegularUserNav/>}
@@ -90,9 +88,9 @@ export default function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/tracker">
+          {/* <Route path="/tracker">
             <Tracker />
-          </Route>
+          </Route> */}
           <Route path="/frontdesk">
             <FrontDesk />
           </Route>
