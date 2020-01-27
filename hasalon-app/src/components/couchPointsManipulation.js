@@ -142,7 +142,7 @@ function IsAdmin(props) {
         <Card.Header>Admin Panel</Card.Header>
         <Card.Body>
           {isLoading ? (
-            <div className='container'>{output}</div>
+            <div className='containerBox'>{output}</div>
           ) : (
             <button onClick={() => setIsLoading(true)}>Load Users</button>
           )}
