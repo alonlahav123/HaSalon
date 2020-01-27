@@ -1,12 +1,13 @@
-.container {
+.containerBox {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   padding-top: 0px;
+  justify-content: space-around;
 }
 
 .userCard {
-  width: 25vw;
+  width: 30vw;
   height: 32vh;
 
   margin: 5px;
@@ -21,7 +22,7 @@
   }
 }
 
-@media only screen and (max-width: 470px) {
+@media only screen and (max-width: 500px) {
   .userCard {
     width: 90vw;
     height: 32vh;
